@@ -1,0 +1,325 @@
+/***** SELECCION DE MODIFICAR *****/
+#modifi form{
+    margin: 20px;
+    width: 500px;
+}
+
+#tablas img{
+    cursor: pointer;
+}
+
+/***** POPUP AÑADIR DISCO *****/
+#anadircd {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+}
+
+#anadircd img#close {
+    position:absolute;
+    right:-14px;
+    top:-14px;
+    cursor:pointer;
+}
+
+div#popupAnadircd {
+    position:absolute;
+    left:50%;
+    top:17%;
+    margin-left:-202px;
+    font-family:'Raleway',sans-serif;     
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);    
+    border:2px solid gray;    
+    border-radius:10px;
+}
+
+#anadircd form {
+    width: 400px;
+    height: 460px;
+    padding: 10px 50px;
+}
+
+#anadircd form table td{
+    text-align: right;
+    padding: 5px;
+}
+
+#anadircd form table #carat{
+    background: url(../imagenes/adjuntar.png) 50 no-repeat;
+    background-size: 45px;
+}
+
+#anadircd form table #caratula{
+    width: 157px !important;
+    height: 57px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    cursor: pointer;
+}
+
+#anadircd form table td h2{
+    text-align: center;
+}
+
+#anadcd{
+    border-color: #000;
+    background-color: transparent;
+    color: #000 !important;
+}
+
+#anadcd:hover{
+    background: #4c4c4c;
+    background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    border-color: #000;
+    color: #fff !important;
+}
+
+/***** POPUP AÑADIR INTERPRETE *****/
+#interprete {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+}
+
+#interprete img#close {
+    position:absolute;
+    right:-14px;
+    top:-14px;
+    cursor:pointer;
+}
+
+div#popupInterprete {
+    position:absolute;
+    left:50%;
+    top:17%;
+    margin-left:-202px;
+    font-family:'Raleway',sans-serif;     
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);    
+    border:2px solid gray;    
+    border-radius:10px;
+}
+
+#interprete form {
+    width: 300px;
+    height: 260px;
+    padding: 10px 50px;
+}
+
+#interprete form table td{
+    text-align: right;
+    padding: 5px;
+}
+
+#interprete form table td h2{
+    text-align: center;
+}
+
+#anadInt{
+    border-color: #000;
+    background-color: transparent;
+    color: #000 !important;
+}
+
+#anadInt:hover{
+    background: #4c4c4c;
+    background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    border-color: #000;
+    color: #fff !important;
+}
+
+/***** POPUP AÑADIR CONCIERTO *****/
+#concierto {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+}
+
+#concierto img#close {
+    position:absolute;
+    right:-14px;
+    top:-14px;
+    cursor:pointer;
+}
+
+div#popupConcierto {
+    position:absolute;
+    left:50%;
+    top:17%;
+    margin-left:-202px;
+    font-family:'Raleway',sans-serif;     
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);    
+    border:2px solid gray;    
+    border-radius:10px;
+}
+
+#concierto form {
+    width: 300px;
+    height: 240px;
+    padding: 10px 50px;
+}
+
+#concierto form table td{
+    text-align: right;
+    padding: 5px;
+}
+
+#concierto form table td h2{
+    text-align: center;
+}
+
+#anadCon{
+    border-color: #000;
+    background-color: transparent;
+    color: #000 !important;
+}
+
+#anadCon:hover{
+    background: #4c4c4c;
+    background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    border-color: #000;
+    color: #fff !important;
+}
+
+/***** POPUP AÑADIR DISCOGRÁFICA *****/
+#discografica {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+}
+
+#discografica img#close {
+    position:absolute;
+    right:-14px;
+    top:-14px;
+    cursor:pointer;
+}
+
+div#popupDiscograf {
+    position:absolute;
+    left:50%;
+    top:17%;
+    margin-left:-202px;
+    font-family:'Raleway',sans-serif;     
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);    
+    border:2px solid gray;    
+    border-radius:10px;
+}
+
+#discografica form {
+    width: 300px;
+    height: 150px;
+    padding: 10px 50px;
+}
+
+#discografica form table td{
+    text-align: right;
+    padding: 5px;
+}
+
+#discografica form table td h2{
+    text-align: center;
+}
+
+#anadDis{
+    border-color: #000;
+    background-color: transparent;
+    color: #000 !important;
+}
+
+#anadDis:hover{
+    background: #4c4c4c;
+    background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    border-color: #000;
+    color: #fff !important;
+}
+
+/***** POPUP MODIFICAR DISCO *****/
+#modificarDisco {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+}
+
+#modificarDisco img#close {
+    position:absolute;
+    right:-14px;
+    top:-14px;
+    cursor:pointer;
+}
+
+div#popupModificacion {
+    position:absolute;
+    left:50%;
+    top:17%;
+    margin-left:-202px;
+    font-family:'Raleway',sans-serif;     
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);    
+    border:2px solid gray;    
+    border-radius:10px;
+}
+
+#modificarDisco form {
+    width: 350px;
+    height: 460px;
+    padding: 10px 50px;
+}
+
+#modificarDisco form table td{
+    text-align: right;
+    padding: 5px;
+}
+
+#modificarDisco form table #carat{
+    background: url(../imagenes/adjuntar.png) 50 no-repeat;
+    background-size: 45px;
+}
+
+#modificarDisco form table #caratula{
+    width: 157px !important;
+    height: 57px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    cursor: pointer;
+}
+
+#modificarDisco form table td h2{
+    text-align: center;
+}
+
+#modif{
+    border-color: #000;
+    background-color: transparent;
+    color: #000 !important;
+}
+
+#modif:hover{
+    background: #4c4c4c;
+    background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    border-color: #000;
+    color: #fff !important;
+}

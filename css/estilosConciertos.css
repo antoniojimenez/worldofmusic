@@ -1,0 +1,44 @@
+#contenido h2{
+	width: 250px;
+	margin: 0 auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+/***** TABLAS DE LOS CONCIERTOS *****/
+#contenido table{
+	width: 300px;
+	margin: 0 auto;
+	margin-top: 20px; 
+	margin-bottom: 20px;
+}
+
+#contenido table td#fecha{
+	background-color: #0DA;
+	border-radius: 10px 10px 0 0;
+}
+
+#contenido table td{
+	text-align: center;
+}
+
+#contenido table h3{
+	margin: 0 auto;
+	font-size: 30px;
+}
+
+#contenido table h4{
+	margin: 0 auto;
+	font-size: 25px;
+}
+
+#contenido table h5{
+	margin: 0 auto;
+	font-size: 20px;
+}
+
+#contenido table td#artista{
+	margin: 0 auto;
+	background-color: #FFF;
+	border-radius: 10px 50px 50px 0;
+}
