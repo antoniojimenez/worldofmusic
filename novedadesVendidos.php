@@ -1,5 +1,9 @@
 <?php
     if(!isset($_GET['est']) && empty($_POST['busq'])){
+        //CONSULTA PARA SACAR LOS DISCOS SIN STOCK, MAXIMO 10 DISCOS
+        $query = "SELECT * FROM disco d, interprete i WHERE d.idInter=i.idInt AND stock = 0 ORDER BY idDisco DESC limit 10";
+        $result3 = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+
         //CONSULTA PARA SACAR LOS ÚLTIMOS 10 DISCOS INSERTADOS
         $query = "SELECT * FROM disco d, interprete i WHERE d.idInter=i.idInt ORDER BY idDisco DESC limit 10";
         $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());                     
@@ -7,6 +11,22 @@
         //CONSULTA PARA SACAR LOS 10 DISCOS MÁS VENDIDOS
         $query = "SELECT * FROM venta v, disco d, interprete i WHERE d.idDisco=v.idDisco AND d.idInter=i.idInt GROUP BY d.idDisco ORDER BY SUM(v.cantidad) DESC limit 10";
         $result2 = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+
+
+        //Imprimir los discos sin stock solo para admins
+        if (isset($_SESSION["tipo"]) && $_SESSION["tipo"]=='Admin') { 
+            if (mysql_num_rows($result3) > 0) {                  
+                echo "<h2>Discos sin stock</h2>";
+                while ($line = mysql_fetch_array($result3, MYSQL_ASSOC)) {
+                    echo "<div class='discos'>";
+                    echo "<a href='index.php?cod=".$line['idDisco']."'><img src='caratulas/".$line['caratula']."' title='".$line['titulo']."'></a>";
+                    echo "<h4>".$line['titulo']."</h4>";
+                    echo "<h5>".$line['alias']."</h5>";
+                    echo "</div>";
+                }
+            }
+        }
+        mysql_free_result($result3);
 
         //Imprimir los 10 últimos resultados para novedades
         echo "<h2>Últimas Novedades</h2>";
