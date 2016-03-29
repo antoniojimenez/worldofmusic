@@ -1,26 +1,40 @@
 <?php
 session_start();
 include ('restringirurl.php');
-include("config.php");
 ?>
 <html>
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <title>Modificar Intérprete</title>
+        
         <?php
-        if (!empty($_SESSION['tema'])){
-        	$tema=$_SESSION['tema'];
-        	?>
-        	<?php
-        	echo "<link href='css/$tema.css' rel='stylesheet' type='text/css'>";
-   ?>     	
-    		<?php
-			}else{
-				?>
-			<link href="css/estilos.css" rel="stylesheet" type="text/css">
-			<?php
-			}
-			?>
+            include("config.php");
+            
+            if(!empty($_SESSION["usuario"])){
+                $query = "SELECT tema FROM cliente WHERE usuario='".$_SESSION["usuario"]."'";
+                $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+                $line = mysql_fetch_array($result, MYSQL_ASSOC);
+            }
+
+            switch ($line["tema"]) {
+                case 'tema2':
+        ?>
+                    <link href="css/tema2.css" rel="stylesheet" type="text/css">
+        <?php
+                    break;
+                case 'tema3':
+        ?>
+                    <link href="css/tema3.css" rel="stylesheet" type="text/css">
+        <?php
+                    break;
+                default:
+        ?>
+                    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+        <?php
+                    break;
+            }
+        ?>
+
         <link href="css/estilosModificar.css" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
         <link rel="icon" type="image/png" href="imagenes/logoIcono.png" /> 

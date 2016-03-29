@@ -18,7 +18,12 @@
                         echo "<tr><td>Nombre:</td><td><input class='texto' type='text' value='".$line['nombre']."' name='nombre'></td></tr>";
                         echo "<tr><td>Apellidos:</td><td><input class='texto' type='text' value='".$line['apellidos']."' name='apellidos'></td></tr>";
                         echo "<tr><td>Telefono:</td><td><input class='texto' type='text' value='".$line['telefono']."' name='telefono'></td></tr>";
-                        echo "<tr><td>Direccion:</td><td><input class='texto' type='text' value='".$line['direccion']."' name='direccion'></td>
+                        echo "<tr><td>Direccion:</td><td><input class='texto' type='text' value='".$line['direccion']."' name='direccion'></td>";
+                        echo "<tr><td>Tema:</td><td><select class='texto' name='tema'>
+                                                    <option value='tema1'>Tema por defecto</option>
+                                                    <option value='tema2'>Tema 2</option>
+                                                    <option value='tema3'>Tema 3</option>
+                                                    </select></td>
                         <td><input class='button' type='submit' id='modUsu' name='modUsu' value='Modificar'></td></tr>";
                         echo "</table>";
                         mysql_free_result($result);
@@ -41,7 +46,8 @@
     
         <?php
             if(isset($_POST['modUsu'])){
-                $query = "UPDATE cliente SET nombre='".
+                $query = "UPDATE cliente SET tema='".
+                    $_POST['tema']."', nombre='".
                     $_POST['nombre']."', apellidos='".
                     $_POST['apellidos']."', telefono='".
                     $_POST['telefono']."',direccion='".

@@ -1,0 +1,637 @@
+body{
+    margin: 0 auto;
+    background-image: url(../imagenes/fondo3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #286af0;    
+    font-family: 'Muli', sans-serif;
+}
+
+#wrapper {
+    min-height:100%;
+    margin: 0 auto;
+}
+
+.button{
+    display: inline-block;
+    text-decoration: none;
+    font: bold 12px/12px Arial !important;
+    padding: 8px 11px;
+    color: #555;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.texto{
+    height: 30px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.transp{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    opacity: .8;
+}
+
+/***** ESTILO DEL TOP *****/
+#top{
+    margin-top: 50px;
+}
+
+#logo{
+    margin: 0 auto;
+    height: 80px;   
+    background-image: url(../imagenes/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#tema *{
+	color:#AAAAAA;
+}
+/***** BOTONES LOG Y REG *****/
+#logReg{
+    background-color: #0AD;
+    width: 250px;
+    margin: 0 auto;
+    padding: 15px;
+    color: #f5b74e;
+    text-align: center;
+}
+
+#logReg a#nomUsu{
+    color: #0DA;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#logReg a{
+    color: #FF0000;
+}
+
+#log{
+    border-color: #f5b74e #e5a73e #d6982f;
+    background-color: transparent;
+    color: #fff !important;
+}
+
+#log:hover{
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);
+    border-color: #f5b74e #e5a73e #d6982f;
+    color: #000 !important;
+    text-shadow: 0 1px 0 #fedd9b;
+}
+
+#reg{
+    border-color: #f5b74e #e5a73e #d6982f;
+    background-color: transparent;
+    color: #fff !important;
+}
+
+#reg:hover{
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);
+    border-color: #f5b74e #e5a73e #d6982f;
+    color: #000 !important;
+    text-shadow: 0 1px 0 #fedd9b;
+}
+
+/***** ESTILOS DE LOGIN *****/
+#login {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+}
+
+#login img#close {
+    position:absolute;
+    right:-14px;
+    top:-14px;
+    cursor:pointer;
+}
+
+div#popupLogin {
+    position:absolute;
+    left:50%;
+    top:17%;
+    margin-left:-202px;
+    font-family:'Raleway',sans-serif;     
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);    
+    border:2px solid gray;    
+    border-radius:10px;
+}
+
+#login form {
+    width:300px;
+    height: 200px;
+    padding:10px 50px;
+    margin-top: 20px;
+}
+
+#login form table{    
+    margin: 0 auto;    
+}
+
+#login form table td{
+    text-align: center;
+    padding: 5px;
+}
+
+#login form table td{
+    text-align: center;
+    padding: 5px;
+}
+
+#logeo{
+    border-color: #000;
+    background-color: transparent;
+    color: #000 !important;
+    margin-top: 20px;
+}
+
+#logeo:hover{
+    background: #4c4c4c;
+    background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 48%,#474747 99%,#474747 99%);
+    background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    border-color: #000;
+    color: #fff !important;
+}
+
+/***** ESTILOS DEL REGISTRO *****/
+#registro {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+}
+
+#registro img#close {
+    position:absolute;
+    right:-14px;
+    top:-14px;
+    cursor:pointer;
+}
+
+div#popupRegistro {
+    position:absolute;
+    left:50%;
+    top:17%;
+    margin-left:-202px;
+    font-family:'Raleway',sans-serif;     
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);    
+    border:2px solid gray;    
+    border-radius:10px;
+}
+
+#registro form {
+    width:400px;
+    height: 400px;
+    padding:10px 50px;
+}
+
+#registro form table td{
+    text-align: right;
+    padding: 5px;
+}
+
+#registro form table td h2{
+    text-align: center;
+}
+
+#regis{
+    border-color: #000;
+    background-color: transparent;
+    color: #000 !important;
+}
+
+#regis:hover{
+    background: #4c4c4c;
+    background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    border-color: #000;
+    color: #fff !important;
+}
+
+/***** POPUP MODIFICAR USUARIO *****/
+#modificarUsu {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+}
+
+#modificarUsu img#close {
+    position:absolute;
+    right:-14px;
+    top:-14px;
+    cursor:pointer;
+}
+
+div#popupModificarUsu {
+    position:absolute;
+    left:50%;
+    top:17%;
+    margin-left:-202px;
+    font-family:'Raleway',sans-serif;     
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);    
+    border:2px solid gray;    
+    border-radius:10px;
+}
+
+#modificarUsu form {
+    width: 350px;
+    padding: 10px 50px;
+}
+
+#modificarUsu form table td{
+    text-align: right;
+    padding: 5px;
+}
+
+#modificarUsu form table td h2{
+    text-align: center;
+}
+
+#modUsu{
+    border-color: #000;
+    background-color: transparent;
+    color: #000 !important;
+}
+
+#modUsu:hover{
+    background: #4c4c4c;
+    background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    border-color: #000;
+    color: #fff !important;
+}
+
+#modPass{
+    border-color: #000;
+    background-color: transparent;
+    color: #000 !important;
+}
+
+#modPass:hover{
+    background: #4c4c4c;
+    background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    border-color: #000;
+    color: #fff !important;
+}
+
+/***** ESTILO DEL MIDDLE *****/
+#middle{
+    width: 80%;
+    margin: 0 auto;
+    background-color: #AAA;    
+    border: 5px solid #0AD;
+}
+
+#menu{
+    height: 60px;
+    background-color: #FF0000;
+    border-bottom: 5px solid #0AD;
+}
+
+/***** ESTILO MENÚ IZQUIERDO *****/
+#menu ul#menuIzq{
+    list-style:none; 
+    padding: 0px;
+    margin: 20px 0px;
+    float: left;
+}
+
+#menu ul#menuIzq li{
+    float:left;
+    padding: 0px;
+    margin: 0px;
+}
+
+#menu ul#menuIzq li a:hover{
+    background-color:#000;
+    padding: 20px;
+}
+
+#menu ul#menuIzq li a{
+    color:#fff;    
+    padding: 20px;
+    text-decoration:none;        
+}
+
+#menu ul#menuIzq li>ul{
+    display:none;
+    position:absolute;
+    margin-top: 20px; 
+    margin-left: -20px;
+    width: 150px;
+    z-index: 5;
+}
+
+#menu ul#menuIzq li:hover ul{
+    background-color:#FF0000;
+    display:block;
+    padding: 0;
+}
+
+#menu ul#menuIzq li>ul>li{
+    position: relative;
+    float:left;
+    padding: 0px;
+    width: 150px;
+}
+
+#menu ul#menuIzq li>ul>li>a{
+    text-decoration: none;
+    display: block;
+}
+
+#menu ul#menuIzq li>ul>li>a:hover{
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+/***** ESTILO MENÚ DERECHO *****/
+#menu ul#menuDer{
+    width: 50%;
+    list-style:none;  
+    margin: 0;
+    float: right;
+}
+
+#menu ul#menuDer li{
+    float:right;    
+    cursor:pointer;        
+}
+
+#menu ul#menuDer #busq{
+    margin: 15px;
+    float:right;
+}
+
+#menu ul#menuDer img{
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+#menu ul#menuDer  a{
+    color: #000;
+    text-decoration: none;
+}
+
+#menu ul#menuDer li#carrito{
+    background-image: url("../imagenes/carrito.png");    
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+#menu ul#menuDer li#carrito span{
+    line-height: 40px;
+    margin: 25px;       
+}
+
+#busqueda{
+    padding: 10px;
+    float: right;
+    border: 1px solid blue;
+}
+
+/***** ESTILO DEL CONTENIDO *****/
+#contenido{
+    width: 80%;
+    margin: 0 auto;    
+}
+
+#contenido>h2{
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;    
+}
+
+#contenido>h3{
+    width: 500px;
+}
+
+.discos{
+    display: inline-block;
+    margin: 10px;
+    width: 150px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.discos a:hover{    
+    border-radius: 10px; 
+    -webkit-box-shadow: 0 1px 1px 1px #f5b74e;
+    box-shadow: 0 1px 1px 1px #f5b74e;
+}
+
+.discos img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+/***** ESTILOS DEL CONTENIDO DEL CARRITO *****/
+#contenidoCarro{
+    width: 70%;
+    margin: 0 auto;    
+}
+
+#contenidoCarro>h2{
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;    
+}
+
+#contenidoCarro>h3{
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;   
+}
+
+.discosCarro{
+    margin: 0 auto;
+    display: inline-block;
+    margin: 10px;
+    width: 350px;
+    border-radius: 10px; 
+    -webkit-box-shadow: 0 2px 2px 2px #000000;
+    box-shadow: 0 2px 2px 2px #000000;
+}
+
+.discosCarro img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+/***** ESTILOS DE LA INFO DEL DISCO *****/
+#opDisco{    
+    margin-top: 50px;
+    text-align: right;
+}
+
+#opDisco img{    
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#discoInfo{    
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    -webkit-box-shadow: 0 1px 1px 1px #000000;
+    box-shadow: 0 1px 1px 1px #000000; 
+}
+
+#discoInfo table{    
+    width: 100%;
+}
+
+#discoInfo tr img{
+    width: 300px;
+    height: 300px;
+}
+
+#discoInfo tr #precio{
+    font-size: 50;
+    padding: 30px;
+}
+
+#discoInfo p{
+    font-size: 25px;
+    color: #FF0000;
+}
+
+/***** ESTILO DE LAS CANCIONES DEL DISCO *****/
+#cancionesDisco{    
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#cancionesDisco table{ 
+    margin: 0 auto;
+    width: 50%;
+    border: 1px;
+}
+
+#cancionesDisco table th{ 
+    background-color: #000;
+    color: #FFF;
+}
+
+#cancionesDisco table td{ 
+    background-color: #FFF;
+}
+
+/***** POPUP MODIFICAR DISCO *****/
+#modificarDisco {
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+}
+
+#modificarDisco img#close {
+    position:absolute;
+    right:-14px;
+    top:-14px;
+    cursor:pointer;
+}
+
+div#popupModificacion {
+    position:absolute;
+    left:50%;
+    top:17%;
+    margin-left:-202px;
+    font-family:'Raleway',sans-serif;     
+    background: -webkit-linear-gradient(top, #feda71, #febb4a);
+    background: -moz-linear-gradient(top, #feda71, #febb4a);    
+    border:2px solid gray;    
+    border-radius:10px;
+}
+
+#modificarDisco form {
+    width: 410px;
+    height: 460px;
+    padding: 10px 50px;
+}
+
+#modificarDisco form table td{
+    text-align: right;
+    padding: 5px;
+}
+
+#modificarDisco form table #carat{
+    background: url(../imagenes/adjuntar.png) no-repeat;
+    background-size: 30px;
+    background-position: center;
+}
+
+#modificarDisco form table #caratula{
+    width: 157px !important;
+    height: 57px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    cursor: pointer;
+}
+
+#modificarDisco form table td h2{
+    text-align: center;
+}
+
+#modif{
+    border-color: #000;
+    background-color: transparent;
+    color: #000 !important;
+}
+
+#modif:hover{
+    background: #4c4c4c;
+    background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 48%, #474747 99%, #474747 99%);
+    border-color: #000;
+    color: #fff !important;
+}
+
+/***** ESTILO DEL BOTTOM *****/
+#bottom{
+    position: relative;
+    padding:5px 0px;
+    background: #286af0;
+    text-align: center;
+    color: #fff;
+    z-index: -1;
+}
+
+/**********DIV de Modificar*************/

@@ -13,7 +13,7 @@ if (isset($_POST['regis'])) {
 
         if(mysql_num_rows($result)==0){
             // Realizamos añadir campo
-            $query = "INSERT INTO cliente values (NULL,'".$_POST["nick"]."','".md5($_POST["contra"])."','Cliente','".$_POST["nombre"]."','".$_POST["apellidos"]."','".$_POST["tel"]."','".$_POST["dir"]."');";
+            $query = "INSERT INTO cliente values (NULL,'".$_POST["nick"]."','".md5($_POST["contra"])."','tema1','Cliente','".$_POST["nombre"]."','".$_POST["apellidos"]."','".$_POST["tel"]."','".$_POST["dir"]."');";
             $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
     ?>
             <script>

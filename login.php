@@ -15,7 +15,6 @@
             $_SESSION["idCliente"]=$line['idCliente'];                                    
             $_SESSION["usuario"]=$_POST['usuario'];
             $_SESSION["tipo"]=$line['tipo'];
-			$_SESSION["tema"]=$line['tema'];
             $_SESSION["cantCarro"]=0;
             $_SESSION["item"][]=array();
         }else{
