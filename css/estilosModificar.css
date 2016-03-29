@@ -1,3 +1,7 @@
+#middle{
+    margin-top: 100px;
+}
+
 /***** SELECCION DE MODIFICAR *****/
 #modifi form{
     margin: 20px;
@@ -49,8 +53,9 @@ div#popupAnadircd {
 }
 
 #anadircd form table #carat{
-    background: url(../imagenes/adjuntar.png) 50 no-repeat;
-    background-size: 45px;
+    background: url(../imagenes/adjuntar.png) no-repeat;
+    background-size: 30px;
+    background-position: center;
 }
 
 #anadircd form table #caratula{

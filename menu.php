@@ -10,7 +10,7 @@
                 <ul>
                     <?php
                     while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
-                        echo "<li><a href='index.php?est=".$line['idEstilo']."'>".$line['tipo']."</a></li>";
+                        echo "<li><a href='index.php?est=".$line['idEstilo']."'><span>".$line['tipo']."</span></a></li>";
                     }
                     mysql_free_result($result);
                     ?>

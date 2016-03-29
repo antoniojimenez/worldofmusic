@@ -61,11 +61,6 @@
     <?php
     // Pulsamos enviar
     if (isset($_POST['modif'])) {
-        // Conectando, seleccionando la base de datos
-        $link = mysql_connect($data[3], $data[1], $data[2])
-        or die('No se pudo conectar: ' . mysql_error());
-        mysql_set_charset('utf8', $link);
-        mysql_select_db($data[0]) or die('No se pudo seleccionar la base de datos');
 
 
         if(!empty($_POST["caratula"])){

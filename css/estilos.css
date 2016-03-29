@@ -42,8 +42,7 @@ body{
 
 /***** ESTILO DEL TOP *****/
 #top{
-    position: relative;
-    margin: 0;
+    margin-top: 50px;
 }
 
 #logo{
@@ -307,36 +306,37 @@ div#popupModificarUsu {
 }
 
 #menu{
-    width: 100%;
-    height: 57px;
+    height: 60px;
     background-color: #000;
     border-bottom: 5px solid #0DA;
 }
 
 /***** ESTILO MENÚ IZQUIERDO *****/
 #menu ul#menuIzq{
-    width: 40%;
     list-style:none; 
-    margin: 0;
-    padding: 0;
+    padding: 0px;
+    margin: 20px 0px;
     float: left;
 }
 
 #menu ul#menuIzq li{
     float:left;
+    padding: 0px;
+    margin: 0px;
+}
+
+#menu ul#menuIzq li a:hover{
+    background-color:#0DA;
     padding: 20px;
 }
 
-#menu ul#menuIzq li:hover{
-    background-color:#0DA;
-}
-
 #menu ul#menuIzq li a{
-    color:#fff;
+    color:#fff;    
+    padding: 20px;
     text-decoration:none;        
 }
 
-#menu ul#menuIzq li ul{
+#menu ul#menuIzq li>ul{
     display:none;
     position:absolute;
     margin-top: 20px; 
@@ -351,10 +351,22 @@ div#popupModificarUsu {
     padding: 0;
 }
 
-#menu ul#menuIzq li ul li{
-    clear:left;
+#menu ul#menuIzq li>ul>li{
+    position: relative;
+    float:left;
+    padding: 0px;
+    width: 150px;
+}
+
+#menu ul#menuIzq li>ul>li>a{
+    text-decoration: none;
+    display: block;
+}
+
+#menu ul#menuIzq li>ul>li>a:hover{
+    text-decoration: none;
     padding: 20px;
-    width: 110px;
+    display: block;
 }
 
 /***** ESTILO MENÚ DERECHO *****/
@@ -431,16 +443,16 @@ div#popupModificarUsu {
     text-overflow: ellipsis;
 }
 
+.discos a:hover{    
+    border-radius: 10px; 
+    -webkit-box-shadow: 0 1px 1px 1px #f5b74e;
+    box-shadow: 0 1px 1px 1px #f5b74e;
+}
+
 .discos img{
     width: 150px;
     height: 150px;
     border-radius: 10px;
-}
-
-.discos img:hover{    
-    border-radius: 10px; 
-    -webkit-box-shadow: 0 2px 2px 2px #000000;
-    box-shadow: 0 2px 2px 2px #000000;
 }
 
 /***** ESTILOS DEL CONTENIDO DEL CARRITO *****/
@@ -581,8 +593,9 @@ div#popupModificacion {
 }
 
 #modificarDisco form table #carat{
-    background: url(../imagenes/adjuntar.png) 50 no-repeat;
-    background-size: 45px;
+    background: url(../imagenes/adjuntar.png) no-repeat;
+    background-size: 30px;
+    background-position: center;
 }
 
 #modificarDisco form table #caratula{
