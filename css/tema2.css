@@ -349,7 +349,8 @@ div#popupModificarUsu {
 #menu ul#menuIzq li:hover ul{
     background-color:#0DA;
     display:block;
-    padding: 0;
+    padding: 0px;
+    margin-left: 0px;
 }
 
 #menu ul#menuIzq li>ul>li{
@@ -381,6 +382,7 @@ div#popupModificarUsu {
 #menu ul#menuDer li{
     float:right;    
     cursor:pointer;        
+    margin-right: 15px;
 }
 
 #menu ul#menuDer #busq{
@@ -458,12 +460,12 @@ div#popupModificarUsu {
 
 /***** ESTILOS DEL CONTENIDO DEL CARRITO *****/
 #contenidoCarro{
-    width: 70%;
+    width: 80%;
     margin: 0 auto;    
 }
 
 #contenidoCarro>h2{
-    width: 250px;
+    text-align: center;
     margin: 0 auto;
     margin-top: 15px;
     margin-bottom: 15px;    
@@ -635,4 +637,28 @@ div#popupModificacion {
     z-index: -1;
 }
 
-/**********DIV de Modificar*************/
+/*********************************************************************************************************/
+/******** ESTILOS FACTURAS ************/
+#contenidoFacturas{    
+    width: 80%;
+    margin: 0 auto;
+}
+
+#contenidoFacturas>h2{ 
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px; 
+}
+
+.facturas{
+    margin: 0 auto;
+    display: inline-block;
+    margin: 10px;
+    width: 250px;
+    background-color: #0DA;
+    border-radius: 10px; 
+    -webkit-box-shadow: 0 1px 1px 1px #000000;
+    box-shadow: 0 1px 1px 1px #000000;
+}
+/******** END ESTILOS FACTURAS ************/
