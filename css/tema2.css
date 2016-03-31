@@ -662,3 +662,14 @@ div#popupModificacion {
     box-shadow: 0 1px 1px 1px #000000;
 }
 /******** END ESTILOS FACTURAS ************/
+
+/******** ESTILOS GRAFICAS ************/
+#contenidoGraficas{    
+    width: 80%;
+    margin: 0 auto;
+}
+
+.highcharts-container{
+    position: static !important;
+}
+/******** END ESTILOS GRAFICAS ************/
