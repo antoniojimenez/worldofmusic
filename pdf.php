@@ -1,22 +1,17 @@
 <?php
 require('./fpdf/fpdf.php');
+include("config.php");
 
-
-/*$connect = dbConnect();
-if ($connect){				
-	$result = dbQuery("SELECT * FROM "._DB_TABLE_CONCEPT." WHERE id = ".$_GET['id']." ", $connect);
-	if (dbNumRows($result) > 0){
-		$row = dbArrayResult($result);
-	}
-}else{
-	echo "asasas";
-}*/
 
 class PDF extends FPDF
 {
 	//Cabecera de página
 	function Header()
 	{
+		$query = "SELECT * FROM cliente c JOIN venta v WHERE c.idCliente = v.idCliente AND v.idVenta = '".$_GET['idVenta']."'";
+		$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+		$line = mysql_fetch_array($result, MYSQL_ASSOC);
+
 		//Logo
 		$this->Image('./imagenes/logoIcono.png',10,10,20);
 		//Arial bold 15
@@ -24,9 +19,11 @@ class PDF extends FPDF
 		//Movernos a la derecha
 		$this->Cell(80);
 		//Título
-		$this->Cell(30,10,utf8_decode('Factura Nº 1 (Cliente - 1)'),0,0,'C');
+		$this->Cell(30,10,utf8_decode('Factura Nº '.$_GET['nFact'].' ('.$line['usuario'].')'),0,0,'C');
+		$this->Ln(8);
+		$this->Cell(190,10,utf8_decode(date("d-m-Y", strtotime($line['fecha']))),0,0,'C');
 		//Salto de línea
-		$this->Ln(20);
+		$this->Ln(15);
 	}
 
 	//Pie de página
@@ -42,77 +39,46 @@ class PDF extends FPDF
 
 	//Tabla simple
 	function BasicTable1($header)
-	{
+	{				
 		define('EURO',chr(128));
-	    //Cabecera
-	    foreach($header as $col)
-	        $this->Cell(37,7,$col,1);
-	    	$this->Ln();
-	    //Datos
-	        $this->Cell(37,6,'1',1);
-	        $this->Cell(37,6,utf8_decode('Antonio Jiménez'),1);
-	        $this->Cell(37,6,'Sevilla',1);
-	        $this->Cell(37,6,'01/10/2015 a 10/10/2015',1);
-	        $this->Cell(37,6,'1.024'.EURO,1);
-	        $this->Ln();
-	        $this->Cell(37,6,'2',1);
-	        $this->Cell(37,6,utf8_decode('Antonio Jiménez'),1);
-	        $this->Cell(37,6,'Sevilla',1);
-	        $this->Cell(37,6,'11/10/2015 a 20/11/2015',1);
-	        $this->Cell(37,6,'1.024'.EURO,1);
-	        $this->Ln();
-	        $this->Cell(37,6,'3',1);
-	        $this->Cell(37,6,utf8_decode('Antonio Jiménez'),1);
-	        $this->Cell(37,6,'Sevilla',1);
-	        $this->Cell(37,6,'21/10/2015 a 30/10/2015',1);
-	        $this->Cell(37,6,'1.024'.EURO,1);
-	        $this->Ln();	    
-	}
 
-	//Tabla simple
-	function BasicTable2($header)
-	{
+		$query = "SELECT * FROM venta v JOIN disco d WHERE v.idDisco = d.idDisco AND v.idVenta = '".$_GET['idVenta']."'";
+		$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+		$cont = 0;
+
 	    //Cabecera
 	    foreach($header as $col)
-	        $this->Cell(37,7,$col,1);
+	        $this->Cell(45,7,$col,1,0,'C');
 	    	$this->Ln();
+
 	    //Datos
-	        $this->Cell(37,6,'4',1);
-	        $this->Cell(37,6,utf8_decode('Antonio Jiménez'),1);
-	        $this->Cell(37,6,'Sevilla',1);
-	        $this->Cell(37,6,'01/11/2015 a 10/11/2015',1);
-	        $this->Cell(37,6,'1.024'.EURO,1);
+	    while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+	    	$cont++;
+	    	$this->Cell(45,6,utf8_decode($line['titulo']),1);
+	        $this->Cell(45,6,$line['precio'].''.EURO,1,0,'C');
+	        $this->Cell(45,6,$line['cantidad'],1,0,'C');
+	        $this->Cell(45,6,$line['cantidad']*$line['precio'].''.EURO,1,0,'R');
 	        $this->Ln();
-	        $this->Cell(37,6,'5',1);
-	        $this->Cell(37,6,utf8_decode('Antonio Jiménez'),1);
-	        $this->Cell(37,6,'Sevilla',1);
-	        $this->Cell(37,6,'11/11/2015 a 20/11/2015',1);
-	        $this->Cell(37,6,'1.024'.EURO,1);
-	        $this->Ln();
-	        $this->Cell(37,6,'6',1);
-	        $this->Cell(37,6,utf8_decode('Antonio Jiménez'),1);
-	        $this->Cell(37,6,'Sevilla',1);
-	        $this->Cell(37,6,'21/11/2015 a 30/11/2015',1);
-	        $this->Cell(37,6,'1.024'.EURO,1);
-	        $this->Ln();
-	    
+	    }	        	    
 	}
 }
+
+
+$query = "SELECT * FROM venta WHERE idVenta = '".$_GET['idVenta']."'";
+$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+$line = mysql_fetch_array($result, MYSQL_ASSOC);
 
 //Creación del objeto de la clase heredada
 $pdf=new PDF();
 
 //Títulos de las columnas
-$header=array('ID CONCEPTO','NOMBRE','CIUDAD','PERIODO FACTURA', 'IMPORTE');
+$header=array('DISCO','PRECIO','CANTIDAD','IMPORTE');
 
 
 $pdf->SetFont('Arial','',9);
 $pdf->AddPage();
 $pdf->BasicTable1($header);
-$pdf->Cell(0,10,'Total: 3.072'.EURO,0,1);
-$pdf->AddPage();
-$pdf->BasicTable2($header);
-$pdf->Cell(0,10,'Total: 3.072'.EURO,0,1);
+$pdf->Cell(180,10,'Total: '.$line['precioTotal'].''.EURO,0,1,'R');
 $pdf->AliasNbPages();
 $pdf->Output(); 
 

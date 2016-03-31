@@ -1,8 +1,6 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="imagenes/logoIcono.png" />
-<?php
-session_start();
-?>
+
 
   <div id="top">
             <a href="index.php"><div id="logo"></div></a>              

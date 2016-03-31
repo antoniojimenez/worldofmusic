@@ -1,4 +1,6 @@
 <?php  
+    session_start();
+    include ('restringirurlUser.php');
     include("cabecera.php");
 ?>  
  <head>

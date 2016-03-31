@@ -1,4 +1,6 @@
 <?php  
+    session_start();
+    include ('restringirurlUser.php');
     include("cabecera.php");
 ?>  
  <head>
@@ -51,21 +53,28 @@
         <!--
         CONTENEDOR PARA LAS FACTURAS
         -->
-        <div id="contenidoFacturas">              
-            <h2>FACTURAS</h2>
+        <div id="contenidoFacturas">            
             <?php
-                $query = "SELECT * FROM venta WHERE idCliente = '".$_SESSION["idCliente"]."' GROUP BY idVenta";
+                $query = "SELECT idVenta, SUM(cantidad), fecha, precioTotal FROM venta WHERE idCliente = '".$_SESSION["idCliente"]."' GROUP BY idVenta";
                 $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 
-                while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
-                    $idVenta = $line['idVenta'];
-                    echo "<table cellspacing=10 class='facturas'>";  
-                    echo "<tr><td>Nº Factura:</td><td>".$idVenta."</td></tr>";
-                    echo "<tr><td>Fecha:</td><td>".date("d-m-Y", strtotime($line['fecha']))."</td></tr>";
-                    echo "<tr><td>Cantidad:</td><td>".$line['cantidad']."</td></tr>";
-                    echo "<tr><td>Precio Total:</td><td>".$line['precioTotal']."€</td></tr>";
-                    echo "<tr><td colspan='2' align='center'><a href='pdf.php?&idVenta=$idVenta'><input type='button' class='button' value='Generar PDF'></a></td></tr>";
-                    echo "</table>";
+                if(mysql_num_rows($result)!=0){
+                    echo "<h2>FACTURAS</h2>";
+                    $cont = 0;
+
+                    while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+                        $idVenta = $line['idVenta'];
+                        $cont++;
+                        echo "<table cellspacing=10 class='facturas'>";  
+                        echo "<tr><td>Nº Factura:</td><td>".$cont."</td></tr>";
+                        echo "<tr><td>Fecha:</td><td>".date("d-m-Y", strtotime($line['fecha']))."</td></tr>";
+                        echo "<tr><td>Cantidad:</td><td>".$line['SUM(cantidad)']."</td></tr>";
+                        echo "<tr><td>Precio Total:</td><td>".$line['precioTotal']."€</td></tr>";
+                        echo "<tr><td colspan='2' align='center'><a href='pdf.php?&idVenta=$idVenta&nFact=$cont' target='_blank'><input type='button' class='button' value='Generar PDF'></a></td></tr>";
+                        echo "</table>";
+                    }
+                }else{
+                    echo "<h2>No has realizado ninguna compra aún</h2>";
                 }
             ?>
         </div>

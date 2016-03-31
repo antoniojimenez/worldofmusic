@@ -3,6 +3,7 @@
         <title>The World Of Music</title>
         
         <?php
+            session_start();
             include("config.php");
             /*
             ESTRUCTURA SUPERIOR

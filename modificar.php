@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('restringirurl.php');
+include ('restringirurlAdmin.php');
 ?>
 
 <html>

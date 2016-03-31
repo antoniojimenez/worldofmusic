@@ -1,4 +1,6 @@
 <?php  
+    session_start();
+    include ('restringirurlUser.php');
     include("cabecera.php");
 ?>  
  <head>
@@ -54,7 +56,7 @@
         <div id="contenidoCarro">              
             <?php  
             $total=0;
-
+               
             if ($_SESSION["cantCarro"]!=0) {
                 echo "<h2>Contenido carrito</h2>";
                 foreach ($_SESSION["item"] as $key => $value) {
@@ -78,7 +80,7 @@
                     <a href='comprar.php?vaciar=1'><input type='button' name='vaciar' class='button' value='Vaciar Carro'></a></center>";
             }else{
                 echo "<h2>Carrito Vacio</h2>";
-            }               
+            }              
             ?> 
         </div>
     </div>
