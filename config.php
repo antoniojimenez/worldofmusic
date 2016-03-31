@@ -11,7 +11,7 @@ if (isset($_ENV['OPENSHIFT_APP_NAME'])) {
     $db_name="worldofmusic"; //my db name
   }
 
-$conectar = mysql_connect($db_host,$db_user,$db_pass); 
+$conectar = mysql_connect($db_host,$db_user,$db_password); 
 mysql_set_charset('utf8', $conectar);
 mysql_select_db($db_name);
 
