@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-03-2016 a las 15:05:12
+-- Tiempo de generación: 31-03-2016 a las 16:33:47
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `canciones` (
   `titulo` varchar(50) NOT NULL,
   `duracion` int(9) NOT NULL,
   `idDisco` int(5) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=217 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=216 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `canciones`
@@ -252,8 +252,7 @@ INSERT INTO `canciones` (`idCancion`, `titulo`, `duracion`, `idDisco`) VALUES
 (212, 'Motherboard', 6, 16),
 (213, 'Fragments of Time', 5, 16),
 (214, 'Doin''it Right', 4, 16),
-(215, 'Contact', 6, 16),
-(216, 'ji', 12, 18);
+(215, 'Contact', 6, 16);
 
 -- --------------------------------------------------------
 
@@ -271,16 +270,19 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `apellidos` varchar(50) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `telefono` int(9) DEFAULT NULL,
   `direccion` varchar(50) COLLATE utf8_spanish2_ci DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
 INSERT INTO `cliente` (`idCliente`, `usuario`, `contrasena`, `tema`, `tipo`, `nombre`, `apellidos`, `telefono`, `direccion`) VALUES
-(1, 'jesusmhe', '827ccb0eea8a706c4c34a16891f84e7b', '', 'Admin', 'Jesus', 'Mantilla Herrera', 633325162, NULL),
-(2, 'ajvjimenez', '827ccb0eea8a706c4c34a16891f84e7b', '', 'Admin', 'Antonio', 'Jimenez Verdejo', 622251215, 'C/artrt'),
-(3, 'cliente', '4983a0ab83ed86e0e7213c8783940193', '', 'Cliente', 'cliente', 'cliente', 123456789, 'c/prueba');
+(1, 'jesusmhe', '827ccb0eea8a706c4c34a16891f84e7b', 'tema1', 'Admin', 'Jesus', 'Mantilla Herrera', 633325162, NULL),
+(2, 'ajvjimenez', '827ccb0eea8a706c4c34a16891f84e7b', 'tema1', 'Admin', 'Antonio', 'Jimenez Verdejo', 622251215, 'C/artrt'),
+(3, 'Pepito', '827ccb0eea8a706c4c34a16891f84e7b', 'tema1', 'Cliente', 'cliente', 'cliente', 123456789, 'c/prueba'),
+(4, 'Juanito', '827ccb0eea8a706c4c34a16891f84e7b', 'tema3', 'Cliente', 'juanito', 'asd', 954954954, 'C/as'),
+(5, 'Fernando', '7815696ecbf1c96e6894b779456d330e', 'tema1', 'Cliente', 'fernando', 'asdsad', 954645852, ''),
+(6, 'Papito', '827ccb0eea8a706c4c34a16891f84e7b', 'tema1', 'Cliente', 'papito', 'etryr', 955130245, '');
 
 -- --------------------------------------------------------
 
@@ -293,7 +295,7 @@ CREATE TABLE IF NOT EXISTS `concierto` (
   `fecha` date NOT NULL,
   `lugar` varchar(90) COLLATE utf8_spanish2_ci NOT NULL,
   `idInter` int(9) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `concierto`
@@ -301,7 +303,8 @@ CREATE TABLE IF NOT EXISTS `concierto` (
 
 INSERT INTO `concierto` (`idConcierto`, `fecha`, `lugar`, `idInter`) VALUES
 (1, '2015-09-16', 'Fibes, Sevilla', 1),
-(3, '2016-04-01', 'Huelva', 5);
+(3, '2016-04-01', 'Huelva', 5),
+(4, '2016-04-23', 'Madrid arena', 9);
 
 -- --------------------------------------------------------
 
@@ -320,29 +323,29 @@ CREATE TABLE IF NOT EXISTS `disco` (
   `idDiscografica` int(9) NOT NULL,
   `idInter` int(9) NOT NULL,
   `idEstilo` int(9) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `disco`
 --
 
 INSERT INTO `disco` (`idDisco`, `titulo`, `duracion`, `formato`, `precio`, `stock`, `caratula`, `idDiscografica`, `idInter`, `idEstilo`) VALUES
-(1, 'The Pinkprint', 67, 'CD', '10', 100, 'thepinkprint.jpg', 2, 1, 1),
-(2, 'Magna Carta... Holy Grail', 59, 'CD', '10', 98, 'magnaCarta.jpg', 1, 2, 2),
-(3, 'Hijo del Levante', 62, 'CD', '12', 100, 'hijodellevante.jpg', 3, 3, 9),
-(4, 'Unorthodox Jukebox', 34, 'CD', '50', 100, 'unorthodoxJukebox.jpg', 4, 4, 1),
+(1, 'The Pinkprint', 67, 'CD', '10', 99, 'thepinkprint.jpg', 2, 1, 1),
+(2, 'Magna Carta... Holy Grail', 59, 'CD', '10', 97, 'magnaCarta.jpg', 1, 2, 2),
+(3, 'Hijo del Levante', 62, 'CD', '12', 0, 'hijodellevante.jpg', 3, 3, 9),
+(4, 'Unorthodox Jukebox', 34, 'CD', '50', 97, 'unorthodoxJukebox.jpg', 4, 4, 1),
 (5, '18 Months', 49, 'CD', '50', 100, '18months.jpg', 5, 5, 6),
 (6, 'Reclassified', 41, 'CD', '50', 100, 'reclassified.jpg', 6, 6, 2),
-(7, 'My Everything', 50, 'CD', '15', 100, 'myeverything.jpg', 7, 7, 1),
+(7, 'My Everything', 50, 'CD', '15', 94, 'myeverything.jpg', 7, 7, 1),
 (8, 'X', 65, 'CD', '17', 100, 'x.jpg', 4, 8, 3),
 (9, 'V', 40, 'CD', '20', 100, 'v.jpg', 8, 9, 3),
-(10, 'Title', 45, 'CD', '14', 99, 'title.jpg', 9, 10, 3),
-(11, 'American Beauty/American Psycho', 39, 'CD', '14', 99, 'AmericanBeautyAmericanPsycho.jpg', 10, 11, 7),
-(12, 'Uptown Special', 38, 'CD', '18', 100, 'uptownSpecial.jpg', 5, 12, 7),
-(13, 'Ghost Stories', 40, 'CD', '19', 26, 'GhostStories.jpg', 11, 13, 3),
-(14, '1000 Forms of Fear', 48, 'CD', '14', 26, '1000formsoffear.jpg', 12, 14, 6),
-(15, 'Listen', 1, 'CD', '16', 78, 'Listen.jpg', 13, 15, 6),
-(16, 'Random Access Memories', 74, 'CD', '13', 0, 'RandomAccessMemories.jpg', 5, 16, 6);
+(10, 'Title', 45, 'CD', '14', 98, 'title.jpg', 9, 10, 3),
+(11, 'American Beauty/American Psycho', 39, 'CD', '14', 98, 'AmericanBeautyAmericanPsycho.jpg', 10, 11, 7),
+(12, 'Uptown Special', 38, 'CD', '18', 99, 'uptownSpecial.jpg', 5, 12, 7),
+(13, 'Ghost Stories', 40, 'CD', '19', 10, 'GhostStories.jpg', 11, 13, 3),
+(14, '1000 Forms of Fear', 48, 'CD', '16', 22, '1000formsoffear.jpg', 12, 14, 6),
+(15, 'Listen', 1, 'CD', '16', 60, 'Listen.jpg', 13, 15, 6),
+(16, 'Random Access Memories', 74, 'CD', '13', 4, 'RandomAccessMemories.jpg', 5, 16, 6);
 
 -- --------------------------------------------------------
 
@@ -353,7 +356,7 @@ INSERT INTO `disco` (`idDisco`, `titulo`, `duracion`, `formato`, `precio`, `stoc
 CREATE TABLE IF NOT EXISTS `discografica` (
   `idDiscografica` int(9) NOT NULL,
   `nombre` varchar(50) COLLATE utf8_spanish2_ci DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `discografica`
@@ -412,7 +415,7 @@ CREATE TABLE IF NOT EXISTS `interprete` (
   `apellidos` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `alias` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `pais` varchar(25) COLLATE utf8_spanish2_ci DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `interprete`
@@ -456,10 +459,28 @@ CREATE TABLE IF NOT EXISTS `venta` (
 --
 
 INSERT INTO `venta` (`idVenta`, `idDisco`, `idCliente`, `cantidad`, `fecha`, `precioTotal`) VALUES
+(7, 1, 4, 1, '2016-03-29', '10'),
 (1, 2, 3, 2, '2016-03-28', '58'),
+(11, 2, 5, 1, '2016-03-31', '258'),
+(4, 4, 3, 1, '2016-03-29', '50'),
+(11, 4, 5, 1, '2016-03-31', '258'),
+(13, 4, 6, 1, '2016-03-31', '50'),
+(10, 7, 3, 1, '2016-03-31', '15'),
+(11, 7, 5, 5, '2016-03-31', '258'),
+(11, 10, 5, 1, '2016-03-31', '258'),
+(11, 11, 5, 1, '2016-03-31', '258'),
+(11, 12, 5, 1, '2016-03-31', '258'),
 (1, 13, 3, 2, '2016-03-28', '58'),
+(6, 13, 3, 2, '2016-03-29', '38'),
+(8, 13, 4, 5, '2016-03-29', '95'),
+(12, 14, 3, 1, '2016-03-31', '16'),
+(9, 14, 5, 1, '2016-03-31', '16'),
+(11, 14, 5, 2, '2016-03-31', '258'),
 (2, 15, 3, 1, '2016-03-28', '16'),
-(3, 16, 3, 1, '2016-03-28', '13');
+(5, 15, 3, 14, '2016-03-29', '224'),
+(11, 15, 5, 2, '2016-03-31', '258'),
+(3, 16, 3, 1, '2016-03-28', '13'),
+(11, 16, 5, 1, '2016-03-31', '258');
 
 --
 -- Índices para tablas volcadas
@@ -528,27 +549,27 @@ ALTER TABLE `venta`
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `idCancion` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=217;
+  MODIFY `idCancion` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=216;
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `idCliente` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `concierto`
 --
 ALTER TABLE `concierto`
-  MODIFY `idConcierto` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `idConcierto` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `disco`
 --
 ALTER TABLE `disco`
-  MODIFY `idDisco` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+  MODIFY `idDisco` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `discografica`
 --
 ALTER TABLE `discografica`
-  MODIFY `idDiscografica` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+  MODIFY `idDiscografica` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `estilo`
 --
@@ -558,7 +579,7 @@ ALTER TABLE `estilo`
 -- AUTO_INCREMENT de la tabla `interprete`
 --
 ALTER TABLE `interprete`
-  MODIFY `idInt` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+  MODIFY `idInt` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- Restricciones para tablas volcadas
 --
