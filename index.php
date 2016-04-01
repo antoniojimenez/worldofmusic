@@ -73,29 +73,7 @@
                     //SI NO HEMOS SELECCIONADO NINGÚN DISCO MOSTRAMOS NOVEDADES Y MÁS VENDIDOS
                     if (!isset($_GET['cod'])) {
                         //SI NO HEMOS SELECCIONADO NINGÚN ESTILO Y BUSCADO ALGÚN DISCO MOSTRAMOS NOVEDADES Y MÁS VENDIDOS
-                        //include("novedadesVendidos.php");
-                        if (empty($_POST['busq'])){
-                            $query = "SELECT * FROM disco d JOIN interprete i WHERE (d.titulo LIKE '%".$_POST['busq']."%' OR i.alias LIKE '%".$_POST['busq']."%') 
-                                        AND d.idInter=i.idInt";
-                            $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
-
-                            //SI EL RESULTADO NOS DEVUELVE UNO O MÁS VALORES LOS MOSTRAMOS
-                            if(mysql_num_rows($result)!=0){
-                                echo "<h2>Resultados:</h2>";
-                                while ($line = mysql_fetch_array($result, MYSQL_ASSOC)){
-                                    echo "<div class='discos'>";
-                                    echo "<a href='index.php?cod=".$line['idDisco']."'><img src='caratulas/".$line['caratula']."' title='".$line['titulo']."'></a>";
-                                    echo "<h4>".$line['titulo']."</h4>";
-                                    echo "</div>";
-                                }
-                                mysql_free_result($result);
-                            //SI NO MOSTRAMOS UN MENSAJE DE INFORMACIÓN
-                            }else{
-                                echo "<h3>No se han encontrado resultados</h3>";
-                            }
-                        }else{
-                            var_dump($_POST['busq']);
-                        }                    
+                        include("novedadesVendidos.php");                    
                     }else{
                         //SI HEMOS SELECCIONADO ALGÚN DISCO MOSTRAMOS SU INFORMACIÓN
                         include("infoDisco.php");
