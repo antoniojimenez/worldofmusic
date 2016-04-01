@@ -73,14 +73,12 @@
                     //SI NO HEMOS SELECCIONADO NINGÚN DISCO MOSTRAMOS NOVEDADES Y MÁS VENDIDOS
                     if (!isset($_GET['cod'])) {
                         //SI NO HEMOS SELECCIONADO NINGÚN ESTILO Y BUSCADO ALGÚN DISCO MOSTRAMOS NOVEDADES Y MÁS VENDIDOS
-                        //include("novedadesVendidos.php"); 
-                        //SI EL CAMPO BÚSQUEDA NO ESTA VACIO REALIZAMOS LA CONSULTA                            
-                        if (!empty($_POST['busq'])){
+                        //include("novedadesVendidos.php");
+                        if (empty($_POST['busq'])){
                             $query = "SELECT * FROM disco d JOIN interprete i WHERE (d.titulo LIKE '%".$_POST['busq']."%' OR i.alias LIKE '%".$_POST['busq']."%') 
                                         AND d.idInter=i.idInt";
                             $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 
-                            var_dump($result);
                             //SI EL RESULTADO NOS DEVUELVE UNO O MÁS VALORES LOS MOSTRAMOS
                             if(mysql_num_rows($result)!=0){
                                 echo "<h2>Resultados:</h2>";
@@ -95,7 +93,9 @@
                             }else{
                                 echo "<h3>No se han encontrado resultados</h3>";
                             }
-                        }                   
+                        }else{
+                            var_dump($_POST['busq']);
+                        }                    
                     }else{
                         //SI HEMOS SELECCIONADO ALGÚN DISCO MOSTRAMOS SU INFORMACIÓN
                         include("infoDisco.php");

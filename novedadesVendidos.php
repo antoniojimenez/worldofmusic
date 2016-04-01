@@ -81,7 +81,6 @@
                         AND d.idInter=i.idInt";
             $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 
-            var_dump($result);
             //SI EL RESULTADO NOS DEVUELVE UNO O MÁS VALORES LOS MOSTRAMOS
             if(mysql_num_rows($result)!=0){
                 echo "<h2>Resultados:</h2>";
