@@ -16,7 +16,11 @@ include("config.php");
 		$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 		$line = mysql_fetch_array($result, MYSQL_ASSOC);
 
-		$line['idVenta']+=1;
+        if(mysql_num_rows($result)==0){
+            $line['idVenta']=1;
+        }else{
+            $line['idVenta']+=1;
+        }
 
 	if (!empty($_GET['total'])){
         foreach ($_SESSION["item"] as $key => $value) {
