@@ -21,7 +21,7 @@
 
     <ul id="menuDer">
         <li>
-            <form action="index.php" method="post">
+            <form action="#" method="post">
                 <input class="texto" type="text" id="busq" name="busq" placeholder="Búsqueda">
             </form>
         </li>
