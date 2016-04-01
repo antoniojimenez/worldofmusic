@@ -77,7 +77,7 @@
     }else{
         //SI EL CAMPO BÚSQUEDA NO ESTA VACIO REALIZAMOS LA CONSULTA                            
         if (!empty($_POST['busq'])){
-            $query = "SELECT * FROM disco d, interprete i WHERE (d.titulo LIKE '%".$_POST['busq']."%' OR i.alias LIKE '%".$_POST['busq']."%') 
+            $query = "SELECT * FROM disco d JOIN interprete i WHERE (d.titulo LIKE '%".$_POST['busq']."%' OR i.alias LIKE '%".$_POST['busq']."%') 
                         AND d.idInter=i.idInt";
             $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 
