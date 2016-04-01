@@ -56,9 +56,25 @@
 
 					include("tablas.php");
 
+					$file = fopen("../configdb.php", "a");
+	                fwrite($file, "<?php"."\n");
+	                fwrite($file, "$"."username="."'".$username."';"."\n");
+	                fwrite($file, "$"."password="."'".$password."';"."\n");
+	                fwrite($file, "$"."database="."'".$database."';"."\n");
+	                fwrite($file, "$"."server="."'".$server."';"."\n");
+	                fwrite($file, "?>"."\n");
+	                fclose($file);
+
 					if(isset($_POST['datos'])){
 						include("datos.php");
 					}
+
+                	unlink("../instalacion/datos.php");
+                	unlink("../instalacion/index.php");
+                	unlink("../instalacion/tablas.php");
+                	unlink("../instalacion/css/estilos.css");
+                	rmdir("../instalacion/css");
+                	rmdir("../instalacion");
 		?>
 					<script>
 						alert("Base de datos instalada");
