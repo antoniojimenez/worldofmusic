@@ -9,7 +9,7 @@ if (isset($_ENV['OPENSHIFT_APP_NAME'])) {
     $db_host="localhost"; //my db host
     $db_password=""; //my db password
     $db_name="worldofmusic"; //my db name
-  }
+}
 
 $conectar = mysql_connect($db_host,$db_user,$db_password); 
 mysql_set_charset('utf8', $conectar);

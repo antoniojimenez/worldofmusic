@@ -87,6 +87,7 @@
                 while ($line = mysql_fetch_array($result, MYSQL_ASSOC)){
                     echo "<div class='discos'>";
                     echo "<a href='index.php?cod=".$line['idDisco']."'><img src='caratulas/".$line['caratula']."' title='".$line['titulo']."'></a>";
+                    echo "<h4>".$line['titulo']."</h4>";
                     echo "</div>";
                 }
                 mysql_free_result($result);
