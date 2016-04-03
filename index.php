@@ -5,6 +5,13 @@
         $string = strip_tags($string);
         $string = mysql_real_escape_string($string);
     }
+
+    $configdb = 'configdb.php';
+
+    if (!file_exists($configdb)) {
+        header("refresh:0; url=./instalacion/index.php");
+    }
+
     session_start();
 ?>
 	
