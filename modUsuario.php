@@ -46,13 +46,13 @@
     
         <?php
             if(isset($_POST['modUsu'])){
-                $query = "UPDATE cliente SET tema='".
+                $query2 = "UPDATE cliente SET tema='".
                     $_POST['tema']."', nombre='".
                     $_POST['nombre']."', apellidos='".
                     $_POST['apellidos']."', telefono='".
                     $_POST['telefono']."',direccion='".
                     $_POST['direccion']."' WHERE usuario='".$_SESSION['usuario']."'";
-                $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());  
+                $result = mysql_query($query2) or die('Consulta fallida: ' . mysql_error());  
                 
                 if($result){
         ?>
