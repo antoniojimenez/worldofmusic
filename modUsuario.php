@@ -1,15 +1,7 @@
   
         <meta charset="UTF-8">
 
-        <?php
-
-            include("config.php");
-
-            $query = "SELECT * FROM cliente where usuario='".$_SESSION['usuario']."'";
-            $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
-            $line = mysql_fetch_array($result, MYSQL_ASSOC);
-
-        ?>
+        <?php include("config.php"); ?>
 
         <div id="modificarUsu">
             <div class="transp"></div>
@@ -17,7 +9,9 @@
                 <img id="close" src="imagenes/cerrar.png" onclick="div_hide_modusu()">  
                 <form method="post">  
                     <?php
-                        
+                        $query = "SELECT * FROM cliente where usuario='".$_SESSION['usuario']."'";
+                        $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+                        $line = mysql_fetch_array($result, MYSQL_ASSOC);
 
                         echo "<table>";
                         echo "<tr><td colspan='3'><h2>Modificar Usuario</h2></td></tr>";
@@ -32,6 +26,7 @@
                                                     </select></td>
                         <td><input class='button' type='submit' id='modUsu' name='modUsu' value='Modificar'></td></tr>";
                         echo "</table>";
+                        mysql_free_result($result);
                     ?>
                 </form>
                 
