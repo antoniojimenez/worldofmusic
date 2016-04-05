@@ -1,7 +1,15 @@
   
         <meta charset="UTF-8">
 
-        <?php include("config.php"); ?>
+        <?php
+
+            include("config.php");
+
+            $query = "SELECT * FROM cliente where usuario='".$_SESSION['usuario']."'";
+            $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+            $line = mysql_fetch_array($result, MYSQL_ASSOC);
+
+        ?>
 
         <div id="modificarUsu">
             <div class="transp"></div>
@@ -9,16 +17,14 @@
                 <img id="close" src="imagenes/cerrar.png" onclick="div_hide_modusu()">  
                 <form method="post">  
                     <?php
-                        $query = "SELECT * FROM cliente where usuario='".$_SESSION['usuario']."'";
-                        $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
-                        $line = mysql_fetch_array($result, MYSQL_ASSOC);
+                        
 
                         echo "<table>";
                         echo "<tr><td colspan='3'><h2>Modificar Usuario</h2></td></tr>";
-                        echo "<tr><td>Nombre:</td><td><input class='texto' type='text' value='".$line['nombre']."' name='nombre'></td></tr>";
-                        echo "<tr><td>Apellidos:</td><td><input class='texto' type='text' value='".$line['apellidos']."' name='apellidos'></td></tr>";
-                        echo "<tr><td>Telefono:</td><td><input class='texto' type='text' value='".$line['telefono']."' name='telefono'></td></tr>";
-                        echo "<tr><td>Direccion:</td><td><input class='texto' type='text' value='".$line['direccion']."' name='direccion'></td>";
+                        echo "<tr><td>Nombre:</td><td><input class='texto' type='text' name='nombre' value='".$line['nombre']."' /></td></tr>";
+                        echo "<tr><td>Apellidos:</td><td><input class='texto' type='text' name='apellidos' value='".$line['apellidos']."' /></td></tr>";
+                        echo "<tr><td>Telefono:</td><td><input class='texto' type='text' name='telefono' value='".$line['telefono']."' /></td></tr>";
+                        echo "<tr><td>Direccion:</td><td><input class='texto' type='text' name='direccion' value='".$line['direccion']."' /></td>";
                         echo "<tr><td>Tema:</td><td><select class='texto' name='tema'>
                                                     <option value='tema1'>Tema por defecto</option>
                                                     <option value='tema2'>Tema 2</option>
@@ -26,7 +32,6 @@
                                                     </select></td>
                         <td><input class='button' type='submit' id='modUsu' name='modUsu' value='Modificar'></td></tr>";
                         echo "</table>";
-                        mysql_free_result($result);
                     ?>
                 </form>
                 
@@ -46,13 +51,13 @@
     
         <?php
             if(isset($_POST['modUsu'])){
-                $query2 = "UPDATE cliente SET tema='".
+                $query = "UPDATE cliente SET tema='".
                     $_POST['tema']."', nombre='".
                     $_POST['nombre']."', apellidos='".
                     $_POST['apellidos']."', telefono='".
                     $_POST['telefono']."',direccion='".
                     $_POST['direccion']."' WHERE usuario='".$_SESSION['usuario']."'";
-                $result = mysql_query($query2) or die('Consulta fallida: ' . mysql_error());  
+                $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());  
                 
                 if($result){
         ?>
