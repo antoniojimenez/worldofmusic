@@ -7,7 +7,7 @@
             <div class="transp"></div>
             <div id="popupModificarUsu">
                 <img id="close" src="imagenes/cerrar.png" onclick="div_hide_modusu()">  
-                <form method="post" action="index.php">  
+                <form method="post">  
                     <?php
                         $query = "SELECT * FROM cliente where usuario='".$_SESSION['usuario']."'";
                         $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
@@ -30,7 +30,7 @@
                     ?>
                 </form>
                 
-                <form method="post" action="index.php">
+                <form method="post">
                     <?php
                     echo "<table>";
                     echo "<tr><td colspan='3'><h2>Modificar Contraseña</h2></td></tr>";
