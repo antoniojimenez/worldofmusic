@@ -1,15 +1,15 @@
-<?php
-
-    foreach ($_POST as &$string) {
-        $string = str_replace('"','',$string);
-        $string = str_replace("'","",$string);
-        $string = mysql_real_escape_string($string);
-    }
+<?php    
 
     $configdb = 'configdb.php';
 
     if (!file_exists($configdb)) {
         header("refresh:0; url=./instalacion/index.php");
+    }
+
+    foreach ($_POST as &$string) {
+        $string = addslashes($string);
+        $string = strip_tags($string);
+        $string = mysql_real_escape_string($string);
     }
 
     session_start();
