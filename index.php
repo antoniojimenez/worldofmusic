@@ -1,7 +1,8 @@
 <?php
 
     foreach ($_POST as &$string) {
-        $string = addslashes($string);
+        $string = str_replace('"','',$string);
+        $string = str_replace("'","",$string);
         $string = mysql_real_escape_string($string);
     }
 
