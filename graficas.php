@@ -115,6 +115,8 @@
             <?php
                 $query = "SELECT SUM(v.cantidad), c.usuario FROM venta v, cliente c WHERE v.idCliente=c.idCliente GROUP BY v.idCliente ORDER BY SUM(v.cantidad) DESC limit 5";
                 $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+
+                
             ?>
             $(function () {
                 // Create the chart
@@ -159,11 +161,37 @@
                         <?php while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {?>
                         {
                             name: '<?php echo $line['usuario']; ?>',
-                            y: <?php echo $line['SUM(v.cantidad)']; ?>
+                            y: <?php echo $line['SUM(v.cantidad)']; ?>,
+                            drilldown: '<?php echo $line['usuario']; ?>'
                         },
                         <?php } ?>
                         ]
-                    }]
+                    }],
+                    drilldown: {
+                        series: [
+                        <?php 
+                        $query = "SELECT SUM(v.cantidad), c.usuario FROM venta v, cliente c WHERE v.idCliente=c.idCliente GROUP BY v.idCliente ORDER BY SUM(v.cantidad) DESC limit 5";
+                        $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+                        while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) { ?>
+                        {
+                            name: '<?php echo $line['usuario']; ?>',
+                            id: '<?php echo $line['usuario']; ?>',
+                            data: [
+                                <?php 
+                                $query2 = "SELECT SUM(v.cantidad), c.usuario, d.titulo FROM venta v, cliente c, disco d WHERE v.idCliente=c.idCliente AND v.idDisco = d.idDisco AND c.usuario = '".$line['usuario']."' GROUP BY v.idDisco, v.idCliente ORDER BY SUM(v.cantidad) DESC";
+                                $result2 = mysql_query($query2) or die('Consulta fallida: ' . mysql_error());
+                                while ($line2 = mysql_fetch_array($result2, MYSQL_ASSOC)) {?>
+                        
+                                [
+                                    '<?php echo $line2['titulo']; ?>',
+                                    <?php echo $line2['SUM(v.cantidad)']; ?>
+                                ],
+                                <?php } ?>
+                            ]
+                        }, 
+                        <?php } ?>
+                        ]
+                    }
                 });
             });           
         </script>

@@ -73,17 +73,17 @@ INSERT INTO `canciones` (`idCancion`, `titulo`, `duracion`, `idDisco`) VALUES
 (33, 'Hijo del Levante', 1, 3),
 (34, 'He Vuelto', 5, 3),
 (35, 'Sr. Zapatones', 5, 3),
-(36, 'Amada M√≠a', 5, 3),
-(37, 'Adi√≥s Amor', 4, 3),
+(36, 'Amada MÌ≠a', 5, 3),
+(37, 'AdiÛs Amor', 4, 3),
 (38, 'Toreando al Destino', 6, 3),
 (39, 'Buenas Noches Amor', 4, 3),
 (40, 'De Lobo a Cordero', 4, 3),
-(41, 'Cuando el R√≠o Suena', 4, 3),
-(42, 'Vend√≠mias Moras', 4, 3),
+(41, 'Cuando el RÌ≠o Suena', 4, 3),
+(42, 'Vendimias Moras', 4, 3),
 (43, 'Donde se Esconde el Miedo', 4, 3),
 (44, 'Un Repasito', 4, 3),
-(45, 'Santa Mar√≠a', 4, 3),
-(46, 'C√°ntame Amor', 4, 3),
+(45, 'Santa MarÌ≠a', 4, 3),
+(46, 'C·ntame Amor', 4, 3),
 (47, 'Memorias del Alzheimer', 4, 3),
 (48, 'Young Girls', 4, 4),
 (49, 'Locked Out Of Heaven', 4, 4),
@@ -302,9 +302,9 @@ CREATE TABLE IF NOT EXISTS `concierto` (
 --
 
 INSERT INTO `concierto` (`idConcierto`, `fecha`, `lugar`, `idInter`) VALUES
-(1, '2015-09-16', 'Fibes, Sevilla', 1),
-(3, '2016-04-01', 'Huelva', 5),
-(4, '2016-04-23', 'Madrid arena', 9);
+(1, '2016-09-16', 'Fibes, Sevilla', 1),
+(3, '2017-04-01', 'Huelva', 5),
+(4, '2017-04-23', 'Madrid arena', 9);
 
 -- --------------------------------------------------------
 
@@ -424,7 +424,7 @@ CREATE TABLE IF NOT EXISTS `interprete` (
 INSERT INTO `interprete` (`idInt`, `name`, `apellidos`, `alias`, `pais`) VALUES
 (1, 'Onika Tanya', 'Maraj', 'Nicki Minaj', 'Venezuela'),
 (2, 'Shawn Corey', 'Carter', 'Jay-Z', 'USA'),
-(3, 'Jose Luis', 'Figuereo', 'El Barrio', 'Espa√±a'),
+(3, 'Jose Luis', 'Figuereo', 'El Barrio', 'EspaÒa'),
 (4, 'Peter Gene', 'Hernandez', 'Bruno Mars', 'USA'),
 (5, 'Adam Richard', 'Wiles', 'Calvin Harris', 'Escocia'),
 (6, 'Amethyst Amelia', 'Kelly', 'Iggy Azalea', 'Australia'),

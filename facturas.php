@@ -55,16 +55,16 @@
         -->
         <div id="contenidoFacturas">            
             <?php
-                $query = "SELECT idVenta, SUM(cantidad), fecha, precioTotal FROM venta WHERE idCliente = '".$_SESSION["idCliente"]."' GROUP BY idVenta";
+                $query = "SELECT idVenta, SUM(cantidad), fecha, precioTotal FROM venta WHERE idCliente = '".$_SESSION["idCliente"]."' GROUP BY idVenta ORDER BY idVenta DESC";
                 $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 
                 if(mysql_num_rows($result)!=0){
                     echo "<h2>FACTURAS</h2>";
-                    $cont = 0;
+                    $cont = mysql_num_rows($result)+1;
 
                     while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
                         $idVenta = $line['idVenta'];
-                        $cont++;
+                        $cont--;
                         echo "<table cellspacing=10 class='facturas'>";  
                         echo "<tr><td>Nº Factura:</td><td>".$cont."</td></tr>";
                         echo "<tr><td>Fecha:</td><td>".date("d-m-Y", strtotime($line['fecha']))."</td></tr>";
