@@ -8,8 +8,8 @@
 
     foreach ($_POST as &$string) {
         $string = str_replace("\'","",$string);
-        $string = strip_tags($string);
-        $string = mysql_real_escape_string($string);
+        /*$string = strip_tags($string);
+        $string = mysql_real_escape_string($string);*/
     }
 
     session_start();
