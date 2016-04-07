@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-03-2016 a las 16:33:47
+-- Tiempo de generación: 07-04-2016 a las 19:24:37
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -73,17 +73,17 @@ INSERT INTO `canciones` (`idCancion`, `titulo`, `duracion`, `idDisco`) VALUES
 (33, 'Hijo del Levante', 1, 3),
 (34, 'He Vuelto', 5, 3),
 (35, 'Sr. Zapatones', 5, 3),
-(36, 'Amada M��a', 5, 3),
-(37, 'Adi�s Amor', 4, 3),
+(36, 'Amada Mía', 5, 3),
+(37, 'Adiós Amor', 4, 3),
 (38, 'Toreando al Destino', 6, 3),
 (39, 'Buenas Noches Amor', 4, 3),
 (40, 'De Lobo a Cordero', 4, 3),
-(41, 'Cuando el R��o Suena', 4, 3),
+(41, 'Cuando el Río Suena', 4, 3),
 (42, 'Vendimias Moras', 4, 3),
 (43, 'Donde se Esconde el Miedo', 4, 3),
 (44, 'Un Repasito', 4, 3),
-(45, 'Santa Mar��a', 4, 3),
-(46, 'C�ntame Amor', 4, 3),
+(45, 'Santa María', 4, 3),
+(46, 'Cántame Amor', 4, 3),
 (47, 'Memorias del Alzheimer', 4, 3),
 (48, 'Young Girls', 4, 4),
 (49, 'Locked Out Of Heaven', 4, 4),
@@ -424,7 +424,7 @@ CREATE TABLE IF NOT EXISTS `interprete` (
 INSERT INTO `interprete` (`idInt`, `name`, `apellidos`, `alias`, `pais`) VALUES
 (1, 'Onika Tanya', 'Maraj', 'Nicki Minaj', 'Venezuela'),
 (2, 'Shawn Corey', 'Carter', 'Jay-Z', 'USA'),
-(3, 'Jose Luis', 'Figuereo', 'El Barrio', 'Espa�a'),
+(3, 'Jose Luis', 'Figuereo', 'El Barrio', 'España'),
 (4, 'Peter Gene', 'Hernandez', 'Bruno Mars', 'USA'),
 (5, 'Adam Richard', 'Wiles', 'Calvin Harris', 'Escocia'),
 (6, 'Amethyst Amelia', 'Kelly', 'Iggy Azalea', 'Australia'),
