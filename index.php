@@ -1,10 +1,10 @@
 <?php
 
-    /*foreach ($_POST as &$string) {
-        $string = stripslashes($string);
+    foreach ($_POST as &$string) {
+        $string = addslashes($string);
         $string = strip_tags($string);
         $string = mysql_real_escape_string($string);
-    }*/
+    }
 
     $configdb = 'configdb.php';
 
